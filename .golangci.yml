@@ -1,0 +1,44 @@
+run:
+  deadline: 10m
+  skip-dirs:
+    - vendor$
+    - third_party$
+  skip-files:
+    - ".*\\.pb\\.go$"
+
+linters:
+  enable:
+    - deadcode
+    - depguard
+    - dupl
+    - errcheck
+    - gochecknoinits
+    - goconst
+    - gocritic
+    - gocyclo
+    - goimports
+    - golint
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - interfacer
+    - lll
+    - maligned
+    - misspell
+    - nakedret
+    - prealloc
+    - scopelint
+    - staticcheck
+    - unconvert
+    - unparam
+    - varcheck
+
+  # explicitly disable linters we plan to enable in the future
+  disable:
+    - gochecknoglobals # may enable this in the future
+    - gofmt            # redundant make step provided
+    - megacheck        # no 1.11 module support
+    - typecheck        # no 1.11 module support
+    - structcheck      # disabled during prototyping
+    - unused           # disabled during prototyping
